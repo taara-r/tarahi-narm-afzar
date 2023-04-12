@@ -1,19 +1,23 @@
+@font-face {
+    font-family: Yekan;
+    src: url('./font/Yekan.ttf');
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Yekan;
+    background-color: white;
+}
+.sticky-header{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 .ms-n5 {
     margin-left: -40px;
 }
-.search{
-    border-radius: 0px 25px 25px 0px !important;
-    height: 2.5rem;
-}
-.search-button{
-    border-radius: 25px 0px 0px 25px !important;
-    height: 2.5rem;
-}
+
 .top-bar-size{
     height: 3rem;
 }
@@ -22,6 +26,12 @@
     color: black;
     font-size: 14px;
 }
+.top-bar-right , .top-bar-center{
+    font-size:16px;
+}
+.top-bar-center{
+    font-weight: bold;
+}
 .top-bar-left a:first-child::after,
 .top-bar-left a:nth-child(2)::after
 {
@@ -29,4 +39,54 @@
     width:1px;
     height: 16px;
     border-right: 1px solid #eee;
+}
+.top-bar-left a:hover{
+    color: red;
+}
+.header-top{
+    box-shadow: 0px 0px 6px 2px #b4b4b4;
+
+
+}
+.header-sz{
+    height:5rem;
+}
+.header-right .header-menu{
+    font-size:30px;
+}
+.header-bottom-fix{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 2.5rem;
+    box-shadow: 0px 0px 6px 2px #b4b4b4;
+
+}
+.header-desktop{
+    border-top: 1px solid whitesmoke;
+    padding: 1.5rem;
+    
+}
+.search-box{
+    width:30rem !important;
+}
+.search{
+    border-radius: 0px 25px 25px 0px !important;
+    height: 2.5rem;
+}
+.search-button{
+    border-radius: 25px 0px 0px 25px !important;
+    height: 2.5rem;
+    background-color: red !important;
+    color: white !important;
+}
+.search-button:hover{
+    color: red !important;
+    background-color: #000 !important;
+}
+.form-control:focus {
+    outline: none!important;
+    box-shadow: none !important;
+    border-color: rgb(231, 231, 231) !important;
 }
