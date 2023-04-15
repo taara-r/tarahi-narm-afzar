@@ -7,7 +7,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Yekan;
-    background-color: white;
 }
 .sticky-header{
     position: -webkit-sticky;
@@ -65,7 +64,8 @@
 }
 .header-desktop{
     border-top: 1px solid whitesmoke;
-    padding: 1.5rem;
+    padding: .5rem;
+    height: 7rem;
     
 }
 .search-box{
@@ -90,3 +90,52 @@
     box-shadow: none !important;
     border-color: rgb(231, 231, 231) !important;
 }
+.nav-bar div{
+    background-color: #000;
+    color: white ;
+    height: 3rem;
+}
+.nav-menu{
+    margin: 0px;
+}
+.nav-bar .nav-menu ul{
+    list-style: none;
+    color: black;
+}
+.nav-bar .nav-menu li{
+    display: inline-block;
+
+}
+.nav-bar .nav-menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+.header-center , .header-right, .header-categories , .header-left, .tell-number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tell-number p {
+    margin: 0;
+    font-size: 14px;
+    color: #b4b4b4;
+}
+.tell-number p span{
+    color: red;
+    text-align: left;
+    direction: ltr !important;
+}
+.header-categories{
+    background-color: red !important;
+    width: 85%;
+    margin-right: 2rem;
+}
+.header-categories p{
+    margin: 0;
+    margin-left: 5rem;
+    margin-right: 1rem;
+    font-size: 18px;
+}
+
