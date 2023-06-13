@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./bootstrap/bootstrap.rtl.min.css">
+    <script src="./jquery/jquery/3.6.4.min.js"></script>
     <script src="./bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>tire</title>
+
 </head>
 <body>
 <div class="container-fluid">
@@ -31,10 +34,25 @@
             </div>
         </div>
         <div class="header-mobile">
-            <div class="header-sz d-lg-none">
+            <div class="header-sz d-xl-none">
                 <div class=" header-top header-sz row  align-items-center">
                     <div class="header-right col-3">
-                        <span class="header-menu ">&#9776;</span>
+                        <span class="header-menu "data-bs-toggle="offcanvas" href="#offcanvasExample" aria-controls="offcanvasExample">&#9776;</span>
+                          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                            <div class="offcanvas-header">
+                              <h5 class="offcanvas-title" id="offcanvasExampleLabel">منو</h5>
+                              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="row header-categories-list offcanvas-menu">
+                                    <a href="#"><img src="./assets/icons/car.png" />تایر</a></li>
+                                    <a href="https://www.google.com"><img src="./assets/icons/chassis.png" />لاستیک خودرو</a></li>
+                                    <a href="#"><img src="./assets/icons/oil-bottle.png" />لاستیک دولتی</a></li>
+                                    <a href="#"><img src="./assets/icons/steering-wheel.png" />لاستیک آفرود</a></li>
+                                    <a href="#"><img src="./assets/icons/plus.png" />بیشتر...</a></li>
+                                </div>
+                            </div>
+                          </div>
                     </div>
                     <div class="header-center text-center col-6">
                         <img src="./assets/tire logo - Made with PosterMyWall.png" width="200" height="80" alt="">
@@ -63,7 +81,55 @@
                 </div>
             </div>
         </div>
-        <div class="header-desktop d-none d-lg-block">
+        <div class="header-mobile mobile-sticky">
+            <div class="header-sz">
+                <div class=" header-top header-sz row  align-items-center">
+                    <div class="header-right col-3">
+                        <span class="header-menu "data-bs-toggle="offcanvas" href="#offcanvasExample" aria-controls="offcanvasExample">&#9776;</span>
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                          <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">منو</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                          </div>
+                          <div class="offcanvas-body">
+                              <div class="row header-categories-list offcanvas-menu">
+                                  <a href="#"><img src="./assets/icons/car.png" />تایر</a></li>
+                                  <a href="https://www.google.com"><img src="./assets/icons/chassis.png" />لاستیک خودرو</a></li>
+                                  <a href="#"><img src="./assets/icons/oil-bottle.png" />لاستیک دولتی</a></li>
+                                  <a href="#"><img src="./assets/icons/steering-wheel.png" />لاستیک آفرود</a></li>
+                                  <a href="#"><img src="./assets/icons/plus.png" />بیشتر...</a></li>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="header-center text-center col-6">
+                        <img src="./assets/tire logo - Made with PosterMyWall.png" width="200" height="80" alt="">
+                    </div>
+                    <div class="header-left col-3 text-end ">
+                        <span class="shopping-cart "> <img src="./assets/icons/shopping-cart.png" width="20" height="20" alt=""></span>
+                    </div>
+                </div>
+                <div class="header-bottom-fix row align-items-center justify-content-center">
+                    <div class="col-3">
+                        <span class="user p-1 p-2"><img src="./assets/icons/menu (1).png" width="20" height="20" alt=""></span>
+
+                    </div>
+                    <div class="col-3">
+                        <span class="user p-1 p-2"><img src="./assets/icons/user.png" width="20" height="20" alt=""></span>
+
+                    </div>
+                    <div class="col-3">
+                        <span class="user p-1 p-2"><img src="./assets/icons/search-interface-symbol.png" width="20" height="20" alt=""></span>
+
+                    </div>
+                    <div class="col-3">
+                        <span class="user p-1 p-2"><img src="./assets/icons/heart.png" width="20" height="20" alt=""></span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-desktop d-none d-xl-block">
             <div class=" row align-items-center">
                 <div class="col"><img src="./assets/tire logo - Made with PosterMyWall.png" width="200" height="80" alt=""></div>
                 <div class="col-6">
@@ -85,12 +151,21 @@
                 </div>
             </div>
         </div>
-        <div class="nav-bar bg-dark  d-none d-lg-block">
+        <div class="nav-bar bg-dark  d-none d-xl-block">
             <div class="row align-items-center justify-content-center text-center ">
                 <div class="col-3 header-right">
-                    <div class="header-categories">
+                    <div class="header-categories"  id="categories">
                         <span class="fa fa-align-right"></span><p>دسته بندی محصولات</p>
                         <span class="fa fa-angle-down"></span>
+                        <div class="row header-categories-list">
+                            <ul id="panel">
+                                <li><a href="#"><img src="./assets/icons/car.png" />تایر</a></li>
+                                <li><a href="https://www.google.com"><img src="./assets/icons/chassis.png" />لاستیک خودرو</a></li>
+                                <li><a href="#"><img src="./assets/icons/oil-bottle.png" />لاستیک دولتی</a></li>
+                                <li><a href="#"><img src="./assets/icons/steering-wheel.png" />لاستیک آفرود</a></li>
+                                <li><a href="#"><img src="./assets/icons/plus.png" />بیشتر...</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="col-6 header-center">
@@ -105,12 +180,815 @@
                 </div>
                 <div class="col-3 header-left">
                     <div class="tell-number">
-                        <p>مشاوره و راهنمایی : <span>890 5671 234 98+  </span></p>
+                        <p>مشاوره و راهنمایی : <span>+98 912 1234 567  </span></p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    <div class="sticky-header">
+        <div class="row align-items-center justify-content-center text-center ">
+            <div class="col-3 header-right">
+                <div class="">
+                    <img src="./assets/tire logo - Made with PosterMyWall.png" width="200" height="80" alt="">
+                </div>
+            </div>
+            <div class="col-6 header-center">
+                <ul class="nav-menu">
+                    <li><a href="#">صفحه اصلی</a></li>
+                    <li><a href="#">فروشگاه</a></li>
+                    <li><a href="#">مقالات</a></li>
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">ارتباط باما</a></li>
+                    
+                </ul>
+            </div>
+            <div class="col-3 header-left">
+                <div class="tell-number">
+                    <p>مشاوره و راهنمایی : <span>+98 912 1234 567 </span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main" style="z-index: -1;">
+        <div class="row section-one">
+            <div class="carousel">
+                <div class="slides">
+                  <img src="https://picsum.photos/1280/720?random=1" alt="slide image" class="slide">
+                  <img src="https://picsum.photos/1280/720?random=2" alt="slide image" class="slide">
+                  <img src="https://picsum.photos/1280/720?random=3" alt="slide image" class="slide">
+                </div>
+                <div class="controls">
+                  <div class="control prev-slide">&#9668;</div>
+                  <div class="control next-slide">&#9658;</div>
+                </div>
+            </div>
+            <div class="search-box-pro-desk d-none d-md-block col-3">
+                <div class=" row search-pan-img">
+                    <div class="col-4">
+                        <img src="./assets/icons/electric-car.png" alt=""><br>
+                        <img src="./assets/icons/bus.png" alt=""><br>
+                        <img src="./assets/icons/semi.png" alt="">
+                    </div>
+                    <div class="col-8">
+                        <div class="search-pan-setting">
+                            <p id="one" class="search-active">براساس سایز تایر</p>
+                            <p id="two">براساس نوع خودرو</p>
+                            <div class="one-select row justify-content-center">
+                                <select name="" id="">
+                                    <option value="">پهنای تایر</option>
+                                    <option value="">14</option>
+                                    <option value="">14.5</option>
+                                    <option value="">15</option>
+                                    <option value="">15.5</option>
+                                    <option value="">16</option>
+                                    <option value="">16.5</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="">نسبت منظر</option>
+                                    <option value="">14</option>
+                                    <option value="">14.5</option>
+                                    <option value="">15</option>
+                                    <option value="">15.5</option>
+                                    <option value="">16</option>
+                                    <option value="">16.5</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="">قطر رینگ</option>
+                                    <option value="">14</option>
+                                    <option value="">14.5</option>
+                                    <option value="">15</option>
+                                    <option value="">15.5</option>
+                                    <option value="">16</option>
+                                    <option value="">16.5</option>
+                                </select>
+                                <button class="m-1 w-50 text-center">جستجو</button>
+                            </div>
+                            <div class="two-select d-none row justify-content-center">
+                                <select name="" id="">
+                                    <option value="">انتخاب برند</option>
+                                    <option value="">تویوتا</option>
+                                    <option value="">لاماری</option>
+                                    <option value="">شاهین</option>
+                                    <option value="">فونیکس</option>
+                                    <option value="">هاوال</option>
+                                    <option value="">پژو</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="">انتخاب مدل</option>
+                                    <option value="">206</option>
+                                    <option value="">207</option>
+                                    <option value="">2008</option>
+
+                                </select>
+                                <select name="" id="">
+                                    <option value="">انتخاب تیپ</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="">انتخاب سال</option>
+                                    <option value="">2023</option>
+                                    <option value="">2022</option>
+                                    <option value="">2021</option>
+                                    <option value="">2020</option>
+                                    <option value="">2019</option>
+
+                                </select>
+                                <select name="" id="">
+                                    <option value="">انتخاب سایز</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+
+                                </select>
+                                <button class="m-1 w-50 text-center">جستجو</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="search-box-pro-mobile d-md-none">
+                <div class=" row search-pan-img">
+                    <div class="col-4">
+                        <img src="./assets/icons/electric-car.png" alt=""><br>
+                        <img src="./assets/icons/bus.png" alt=""><br>
+                        <img src="./assets/icons/semi.png" alt="">
+                    </div>
+                    <div class="col-8">
+                        <div class="search-pan-setting">
+                            <p id="onemob">براساس سایز تایر</p>
+                            <p id="twomob">براساس نوع خودرو</p>
+                            <div class="onemob-select row justify-content-center">
+                                <select name="" id="">
+                                    <option value="">پهنای تایر</option>
+                                    <option value="">14</option>
+                                    <option value="">14.5</option>
+                                    <option value="">15</option>
+                                    <option value="">15.5</option>
+                                    <option value="">16</option>
+                                    <option value="">16.5</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="">نسبت منظر</option>
+                                    <option value="">14</option>
+                                    <option value="">14.5</option>
+                                    <option value="">15</option>
+                                    <option value="">15.5</option>
+                                    <option value="">16</option>
+                                    <option value="">16.5</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="">قطر رینگ</option>
+                                    <option value="">14</option>
+                                    <option value="">14.5</option>
+                                    <option value="">15</option>
+                                    <option value="">15.5</option>
+                                    <option value="">16</option>
+                                    <option value="">16.5</option>
+                                </select>
+                                <button class="m-1 w-50 text-center">جستجو</button>
+                            </div>
+                            <div class="twomob-select d-none row justify-content-center">
+                                <select name="" id="">
+                                    <option value="">انتخاب برند</option>
+                                    <option value="">تویوتا</option>
+                                    <option value="">لاماری</option>
+                                    <option value="">شاهین</option>
+                                    <option value="">فونیکس</option>
+                                    <option value="">هاوال</option>
+                                    <option value="">پژو</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="">انتخاب مدل</option>
+                                    <option value="">206</option>
+                                    <option value="">207</option>
+                                    <option value="">2008</option>
+
+                                </select>
+                                <select name="" id="">
+                                    <option value="">انتخاب تیپ</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="">انتخاب سال</option>
+                                    <option value="">2023</option>
+                                    <option value="">2022</option>
+                                    <option value="">2021</option>
+                                    <option value="">2020</option>
+                                    <option value="">2019</option>
+
+                                </select>
+                                <select name="" id="">
+                                    <option value="">انتخاب سایز</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+
+                                </select>
+                                <button class="m-1 w-50 text-center">جستجو</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row categories">
+            <ul class="scroll-none">
+                <li>               
+                     <div class="category-item">
+                        <div class="category-title">
+                            <h4>
+                                چرخ خودرو
+                            </h4>
+                        </div>
+                        <div class="category-icon">
+                            <img src="./assets/icons/car.png" alt="">
+                        </div>
+                    </div>
+                </li>                
+                <li>               
+                    <div class="category-item">
+                    <div class="category-title">
+                        <h4>
+                            بدنه خودرو
+                        </h4>
+                    </div>
+                    <div class="category-icon">
+                        <img src="./assets/icons/chassis.png" alt="">
+                    </div>
+                    </div>
+                </li>
+                <li>               
+                    <div class="category-item">
+                    <div class="category-title">
+                        <h4>
+                            فرمان خودرو
+                        </h4>
+                    </div>
+                    <div class="category-icon">
+                        <img src="./assets/icons/steering-wheel.png" alt="">
+                    </div>
+                    </div>
+                </li>
+                <li>               
+                    <div class="category-item">
+                    <div class="category-title">
+                        <h4>
+                            چراغ خودرو
+                        </h4>
+                    </div>
+                    <div class="category-icon">
+                        <img src="./assets/icons/car-light.png" alt="">
+                    </div>
+                    </div>
+                </li>
+                <li>               
+                    <div class="category-item">
+                    <div class="category-title">
+                        <h4>
+                            روغن مخصوص
+                        </h4>
+                    </div>
+                    <div class="category-icon">
+                        <img src="./assets/icons/oil.png" alt="">
+                    </div>
+                    </div>
+                </li>
+                <li>               
+                    <div class="category-item">
+                    <div class="category-title">
+                        <h4>
+                            سرنشین خودرو
+                        </h4>
+                    </div>
+                    <div class="category-icon">
+                        <img src="./assets/icons/car (1).png" alt="">
+                    </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="row big-banner">
+            <div class="col-12 col-md-6 big-banner-inside">
+                    <div class="banner-img">
+                        <img src="./assets/banner-32.png" alt="">
+                        <div class="banner-text">
+                            <div class="h4">
+                                بهترین اجناس با ایران تایر
+                            </div>
+                            <p>
+                                همین حالا خرید کنید
+                            </p>
+                        </div>
+                        <button class="banner-btn">خرید کنید</button>
+                    </div>
+            </div>
+            <div class="col-12 col-md-6 big-banner-inside">
+                <div class="banner-img">
+                    <img src="./assets/banner-33.png" alt="">
+                    <div class="banner-text">
+                        <div class="h4">
+                            بهترین اجناس با ایران تایر
+                        </div>
+                        <p>
+                            همین حالا خرید کنید
+                        </p>
+                    </div>
+                    <button class="banner-btn">خرید کنید</button>
+                </div>
+            </div>
+        </div>
+        <div class="row best-sell">
+            <div class="best-sell-head">
+                <div class="col-12 best-sell-title">
+                    <h3><strong>پرفروش ترین ها</strong></h3>
+                </div>
+                <div class="col-12 best-sell-menu">
+                    <ul>
+                        <li><a  class="best-sell-active">وسایل الکترونیکی</a></li>
+                        <li><a >تایر و لاستیک</a></li>
+                        <li><a >چراغ اورجینال</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="best-sell-body">
+                <ul id="ul-scroll" class="scroll-none ul-scroll">
+                    <li>
+                        <div class="best-sell-item">
+                            <img src="./assets/Image-9.jpg" alt="">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="sell-btn">خرید</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="best-sell-item">
+                            <img src="./assets/Image-14.jpg" alt="">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="sell-btn ">خرید</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="best-sell-item">
+                            <img src="./assets/Image-15.jpg" alt="">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="sell-btn ">خرید</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="best-sell-item">
+                            <img src="./assets/Image-16.jpg" alt="">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="sell-btn">خرید</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="best-sell-item">
+                            <img src="./assets/Image-23.jpg" alt="">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="sell-btn">خرید</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="best-sell-item">
+                            <img src="./assets/Image-27.jpg" alt="">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="sell-btn">خرید</button>
+                            </div>
+                        </div>
+                        
+                    </li>
+                </ul>
+                <button id="slideright" type="button"><span class="fa fa-angle-double-right"></span></button>
+                <button id="slideleft" type="button"><span class="fa fa-angle-double-left"></span></button>
+            </div>
+        </div>
+        <div class="row big-banner">
+            <div class="col-12 col-md-4 big-banner-inside">
+                    <div class="banner-img">
+                        <img src="./assets/banner-12.jpg" alt="">
+                        <div class="banner-text">
+                            <div class="h4">
+                                بهترین اجناس با ایران تایر
+                            </div>
+                            <p>
+                                همین حالا خرید کنید
+                            </p>
+                        </div>
+                        <button class="banner-btn">خرید کنید</button>
+                    </div>
+            </div>
+            <div class="col-12 col-md-4 big-banner-inside">
+                <div class="banner-img">
+                    <img src="./assets/banner-14.jpg" alt="">
+                    <div class="banner-text">
+                        <div class="h4">
+                            بهترین اجناس با ایران تایر
+                        </div>
+                        <p>
+                            همین حالا خرید کنید
+                        </p>
+                    </div>
+                    <button class="banner-btn">خرید کنید</button>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 big-banner-inside">
+                <div class="banner-img">
+                    <img src="./assets/ban-4.jpg" alt="">
+                    <div class="banner-text">
+                        <div class="h4">
+                            بهترین اجناس با ایران تایر
+                        </div>
+                        <p>
+                            همین حالا خرید کنید
+                        </p>
+                    </div>
+                    <button class="banner-btn">خرید کنید</button>
+                </div>
+            </div>
+        </div>
+        <div class="row big-video">
+            <div class="col-12">
+                <div class="play">
+                    <span class="fa fa-play"></span>
+                </div>
+                    <video width="100%" height="100%" id="video" poster="./assets/banner-12.jpg" controls>
+                        <source src="./assets/video.mp4" type="video/mp4">
+                    </video>
+            </div>
+        </div>
+        <div class="row special-offers">
+            <div class="col-12 best-sell-title">
+                <h3><strong>پرفروش ترین ها</strong></h3>
+            </div>
+            <div class="sale-items col-12 col-md-12 col-lg-4">
+                <ul id="ul-scroll-sale" class="scroll-none">
+                    <li class="col-12 sale-li col-md-6 col-lg-12">
+                        <div class="sale-item">
+                            <img src="./assets/Image-9.jpg" alt="">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="sell-btn " style="display:none">خرید</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-12 sale-li col-md-6 col-lg-12">
+                        <div class="sale-item">
+                            <img src="./assets/Image-14.jpg" alt="">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="sell-btn " style="display:none">خرید</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-12 sale-li col-md-6 col-lg-12">
+                        <div class="sale-item">
+                            <img src="./assets/Image-15.jpg" alt="">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="sell-btn " style="display:none">خرید</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-12 sale-li col-md-6 col-lg-12">
+                        <div class="sale-item">
+                            <img src="./assets/Image-16.jpg" alt="">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="sell-btn" style="display:none">خرید</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <button id="saleslideright" type="button"><span class="fa fa-angle-double-right"></span></button>
+                <button id="saleslideleft" type="button"><span class="fa fa-angle-double-left"></span></button>
+            </div>
+            <div class="row col-12 col-md-12 col-lg-8 mb-5">
+                <div class="col-12 col-md-6">
+                    <div class="sale-multi-item">
+                        <img src="./assets/Image-9.jpg" alt="">
+                        <div class="sale-main">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="multi-sale-btn">خرید</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="sale-multi-item">
+                        <img src="./assets/Image-14.jpg" alt="">
+                        <div class="sale-main">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="multi-sale-btn">خرید</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="sale-multi-item">
+                        <img src="./assets/Image-15.jpg" alt="">
+                        <div class="sale-main">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="multi-sale-btn ">خرید</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="sale-multi-item">
+                        <img src="./assets/Image-16.jpg" alt="">
+                        <div class="sale-main">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="multi-sale-btn ">خرید</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="sale-multi-item">
+                        <img src="./assets/Image-23.jpg" alt="">
+                        <div class="sale-main">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="multi-sale-btn ">خرید</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="sale-multi-item">
+                        <img src="./assets/Image-27.jpg" alt="">
+                        <div class="sale-main">
+                            <p class="category">دسته بندی</p>
+                            <p class="title">
+                                تایر با درجه بندی
+                            </p>
+                            <div class="rank">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="price">
+                                <p>980,000,000</p>
+                                <button class="multi-sale-btn ">خرید</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row element-section justify-content-center mb-5">
+                <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+                    <img class="icon-sec p-2" src="./assets/icons/hand.png" alt="">
+                    <h5>بازگشت صددرصد پول</h5>
+                </div>
+                <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+                    <img class="icon-sec p-2" src="./assets/icons/email.png" alt="">
+                    <h5>ارسال رایگان </h5>
+                </div>
+                <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+                    <img class="icon-sec p-2" src="./assets/icons/technical-support.png" alt="">
+                    <h5> پشتیبانی 24 ساعته</h5>
+                </div>
+            </div>
+            <footer class="row  footer justify-content-center mb-1">
+                <div class="col-12 col-lg-4 d-flex">
+                    <img src="./assets/tire logo - Made with PosterMyWall.png" alt="">
+                    <h6>لورم ایپسوم متن ساختگحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</h6>
+                </div>
+                <div class="col-12 col-lg-4 justify-content-center">
+                    <div class="row justify-content-center">
+                        <h5>لینک های اصلی</h5>
+                    </div>
+                    <div class="row justify-content-center">
+                        <ul>
+                            <li><a href="#">خانه</a></li>
+                            <li><a href="#">فروشگاه</a></li>
+                            <li><a href="#">درباره ما</a></li>
+                            <li><a href="#">تماس باما</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 d-flex  justify-content-center">
+                    <div class="address">
+                        <p>
+                            <span><b>آدرس:</b></span>
+                            <span>تهران ، منطقه 22 ، دریاچه ، بلوار جوزانی غربی</span>
+                        </p>
+                        <div class="phone-num">
+                            <p>
+                                <span><b>شماره تماس:</b></span>
+                                <span>+98 912 1234 567</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <div class="row map">
+                <iframe  height="200" src="https://map.ir/lat/35.739964/lng/51.212769/z/13/p/ما اینجاییم"></iframe>
+            </div>
+        </div>
+    </div>
 </div>
+<script>
+$(".sticky-header").slideUp(1);
+    
+</script>
 </body>
 </html>
