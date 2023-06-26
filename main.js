@@ -21,11 +21,11 @@ $("#categories").click(function(){
   $("#panel").slideToggle("slow");
 })
 const delay = 5000; //ms
-
+try{
 const slides = document.querySelector(".slides");
 const slidesCount = slides.childElementCount;
 const maxLeft = (slidesCount - 1) * 100 * -1;
-
+}catch{}
 let current = 0;
 
 function changeSlide(next = true) {
@@ -43,7 +43,7 @@ const restart = function() {
   clearInterval(autoChange);
   autoChange = setInterval(changeSlide, delay);
 };
-
+try{
 // Controls
 document.querySelector(".next-slide").addEventListener("click", function() {
   changeSlide();
@@ -54,6 +54,7 @@ document.querySelector(".prev-slide").addEventListener("click", function() {
   changeSlide(false);
   restart();
 });
+}catch{}
 $('.search-pan-img img').click(function(e) {
   e.preventDefault();
   $('.search-pan-img img').removeClass('search-img-select');
@@ -91,15 +92,18 @@ const buttonRight = document.getElementById('slideright');
 const buttonLeft = document.getElementById('slideleft');
 const SalebuttonRight = document.getElementById('saleslideright');
 const SalebuttonLeft = document.getElementById('saleslideleft');
-
+try{
 buttonRight.onclick = function () {
+  console.log('brand')
   $("#ul-scroll").animate(
     { scrollLeft: document.getElementById('ul-scroll').scrollLeft + 150 }, 1000);
 };
 buttonLeft.onclick = function () {
+  console.log('brand')
   $("#ul-scroll").animate(
     { scrollLeft: document.getElementById('ul-scroll').scrollLeft - 150 }, 1000);
 };
+
 // buttonLeft.onclick = function () {
 //   document.getElementById('ul-scroll').scrollLeft -= 150;
 // }
@@ -111,39 +115,41 @@ SalebuttonLeft.onclick = function () {
   $("#ul-scroll-sale").animate(
     { scrollLeft: document.getElementById('ul-scroll-sale').scrollLeft - 450 }, 1000);
 };
+}catch{}
+
 $('.best-sell-body li').mouseenter(function() {
-  $(this).find('.price p').fadeOut(100,()=>{
-    $(this).find('.sell-btn').fadeIn(100);
+  $(this).find('.price p').fadeOut(0,()=>{
+    $(this).find('.sell-btn').fadeIn(250);
   })
   
 })
 $('.best-sell-body li').mouseleave(function() {
   $(this).find('.sell-btn').fadeOut(0,()=>{
-    $(this).find('.price p').fadeIn(100);
+    $(this).find('.price p').fadeIn(250);
   })
   
 
 })
 $('.sale-li').mouseenter(function() {
-  $(this).find('.price p').fadeOut(100,()=>{
-    $(this).find('.sell-btn').fadeIn(100);
+  $(this).find('.price p').fadeOut(0,()=>{
+    $(this).find('.sell-btn').fadeIn(250);
   });
 
 });
 $('.sale-li').mouseleave(function() {
-  $(this).find('.sell-btn').fadeOut(100,()=>{
-    $(this).find('.price p').fadeIn(100);
+  $(this).find('.sell-btn').fadeOut(0,()=>{
+    $(this).find('.price p').fadeIn(250);
   });
 });
 
-$('.sale-multi-item').mouseenter(function() {
-  $(this).find('.price p').fadeOut(200,()=>{
-    $(this).find('.multi-sale-btn').fadeIn('200');
+$('.sale-main').mouseenter(function() {
+  $(this).find('.price p').fadeOut(0,()=>{
+    $(this).find('.multi-sale-btn').fadeIn(250);
   })
 })
 $('.sale-multi-item').mouseleave(function() {
   $(this).find('.multi-sale-btn').fadeOut(200,()=>{
-    $(this).find('.price p').fadeIn('200');
+    $(this).find('.price p').fadeIn(250);
   })
 })
 $(".play").click(function() {
@@ -158,3 +164,18 @@ $('video').on('ended',function(){
   $(".play").removeClass('d-none');
 
 });
+
+// ---------------- brand - about us -----------------------------
+const BrandbuttonRight = document.getElementById('brandright');
+const BrandbuttonLeft = document.getElementById('brandleft');
+BrandbuttonRight.onclick = function () {
+console.log('brand')
+$("#ul-brand-scroll").animate(
+    { scrollLeft: document.getElementById('ul-brand-scroll').scrollLeft + 100 }, 1000);
+};
+BrandbuttonLeft.onclick = function () {
+console.log('brand left')
+$("#ul-brand-scroll").animate(
+    { scrollLeft: document.getElementById('ul-brand-scroll').scrollLeft - 100 }, 1000);
+};
+// ------------------------------------end brand ------------
