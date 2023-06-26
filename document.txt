@@ -1,3 +1,5 @@
+تارا رادصفا - پروژه اصول طراحی نرم افزار - تایم 5شنبه
+
 $(window).scroll(function(){
     if ($(window).scrollTop() >= 250) {
         $(".sticky-header").slideDown(1000);
